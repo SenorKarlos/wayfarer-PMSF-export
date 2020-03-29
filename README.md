@@ -65,9 +65,9 @@ Go back to your Wayfarer window & close the popup.
 
 * These instructions assume you know MySQL basics and text editor basics
 
-Using your favorite text editor, Replace `username#1234` with the senders discord ID.\n
-Save the file as .sql or copy over to your MySQL client and execute.\n
-Run the POI watcher at https://github.com/SenorKarlos/POIwatcher to automatically delete accepted POI and to send webhooks based on PMSF manual submit. I suggest using the same webhook channel(s) you specify in $noDiscordPOISubmitChannel if you allow manual submissions.
+* Using your favorite text editor, Replace `username#1234` with the senders discord ID.
+* Save the file as .sql or copy over to your MySQL client and execute.
+* Run the POI watcher at https://github.com/SenorKarlos/POIwatcher to automatically delete accepted POI and to send webhooks based on PMSF manual submit. I suggest using the same webhook channel(s) you specify in $noDiscordPOISubmitChannel if you allow manual submissions.
 
 ### Thanks
 
