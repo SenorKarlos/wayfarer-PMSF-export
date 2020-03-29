@@ -19,26 +19,28 @@ It does not even get your player name let alone any personal or account data, an
 ![installation](assets/installation_2.png?raw=true)
 
 * Now go to the new extension and open options.
-* OPTIONAL SECURITY TIP: Change the "Site Access" setting to On Click or On Specific Sites, specifying `https://wayfarer.nianticlabs.com`
 ![installation](assets/installation_3.png?raw=true)
 ![installation](assets/installation_4.png?raw=true)
+
+* OPTIONAL SECURITY TIP: Change the "Site Access" setting to On Click or On Specific Sites, specifying `https://wayfarer.nianticlabs.com`
 ![installation](assets/installation_5.png?raw=true)
 
 * To install the script, click on '+'. An editor should now open.
 ![installation](assets/installation_6.png?raw=true)
 
 * Open the script file in another browser window at this link: https://github.com/SenorKarlos/wayfarer-PMSF-export/blob/master/wayfarer-PMSF-export.js
+![installation](assets/installation_12.png?raw=true)
 * Copy the entire text in the code viewer, making sure not to get anything extra.
 ![installation](assets/installation_9.png?raw=true)
 ![installation](assets/installation_10.png?raw=true)
-* Then paste it into Tampermonkey's editor. In order to display the correct Submitted Date on the map we need to make one small edit if you are west of Universal Time (UTC London Time). Examples provided for North America at Midnight on the submission date (3600 x hours offset)
+* Then paste it into Tampermonkey's editor. In order to display the correct Submitted Date on the map we need to make one small edit if you are west of Universal Time (UTC London Time). Examples provided for North America at Midnight on the submission date. (3600 x hours offset) For UTC and east it should show the correct date, however if you want to stick with Midnight Local Time, simply use a negative number.
 
-Newfoundland Time - 12600\
-Atlantic Time - 14400\
-Eastern Time - 18000\
-Central time - 21600\
-Mountain Time - 25200\
-Pacific Time - 28800
+Newfoundland Time - `12600`\
+Atlantic Time - `14400`\
+Eastern Time - `18000`\
+Central time - `21600`\
+Mountain Time - `25200`\
+Pacific Time - `28800`
 
 ![installation](assets/installation_11.png?raw=true)
 ![installation](assets/installation_7.png?raw=true)
