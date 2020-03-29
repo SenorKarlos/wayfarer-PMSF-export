@@ -4,37 +4,43 @@
 
 I have checked this script while editing and neither it nor the program that enables it is dangerous if used properly. I have been running Tampermonkey for years and have used it on both Ingress Intel (IITC plugin) and now Wayfarer with no issues. To be extra safe follow the optional security tips provided.
 
+It does not even get your player name let alone any personal or account data, and does not send any evidence of its use back to Niantic.
+
 ## Installation
 
 * Required: Desktop/Laptop Computer & Google Chrome (may also work on FireFox, NOT recommended ot tested on mobile or tablets)
 
-First install Tampermonkey Plugin for Chrome Browser. Go to:
+* First install Tampermonkey Plugin for Chrome Browser. Go to: https://www.tampermonkey.net/
 
-https://www.tampermonkey.net/
-
+* Click on download. You'll be redirected to Chrome's webstore.
 ![installation](assets/installation_1.png?raw=true)
-Click on download. You'll be redirected to Chrome's webstore.
 
-Choose 'Add to Chrome'.
+* Choose 'Add to Chrome'.
 ![installation](assets/installation_2.png?raw=true)
 
-Now go to the new extension...
+* Now go to the new extension and open options.
+* OPTIONAL SECURITY TIP: Change the "Site Access" setting to On Click or On Specific Sites, specifying `https://wayfarer.nianticlabs.com`
 ![installation](assets/installation_3.png?raw=true)
 ![installation](assets/installation_4.png?raw=true)
-
-...and open options.
 ![installation](assets/installation_5.png?raw=true)
 
-* OPTIONAL SECURITY TIP: Change the "Site Access" setting to On Click or On Specific Sites, specifying `https://wayfarer.nianticlabs.com`
-
-To install the script, click on '+'. An editor should now open.
+* To install the script, click on '+'. An editor should now open.
 ![installation](assets/installation_6.png?raw=true)
 
-Open the script file in another browser window. https://github.com/SenorKarlos/wayfarer-PMSF-export/blob/master/wayfarer-PMSF-export.js
-Copy the entire text in the code viewer, making sure not to get anything extra.
+* Open the script file in another browser window at this link: https://github.com/SenorKarlos/wayfarer-PMSF-export/blob/master/wayfarer-PMSF-export.js
+* Copy the entire text in the code viewer, making sure not to get anything extra.
 ![installation](assets/installation_9.png?raw=true)
 ![installation](assets/installation_10.png?raw=true)
-Then paste it into Tampermonkey's editor and save. 
+* Then paste it into Tampermonkey's editor. In order to display the correct Submitted Date on the map we need to make one small edit if you are west of Universal Time (UTC London Time). Examples provided for North America at Midnight on the submission date (3600 x hours offset)
+
+Newfoundland Time - 12600\
+Atlantic Time - 14400\
+Eastern Time - 18000\
+Central time - 21600\
+Mountain Time - 25200\
+Pacific Time - 28800
+
+![installation](assets/installation_11.png?raw=true)
 ![installation](assets/installation_7.png?raw=true)
 
 After saving & closing it should look like the following:

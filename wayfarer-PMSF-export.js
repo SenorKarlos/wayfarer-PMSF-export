@@ -3,8 +3,8 @@
 // @version      0.1
 // @description  Export nomination data from Wayfarer via SQL INSERT/UPDATE
 // @namespace	 https://github.com/SenorKarlos/
-// @downloadURL	 https://github.com/SenorKarlos/wayfarer_PMSF_export/blob/master/wayfarer-PMSF-export.js
-// @homepageURL	 https://github.com/SenorKarlos/wayfarer_PMSF_export/
+// @downloadURL	 https://github.com/SenorKarlos/blob/master/wayfarer-PMSF-export.js
+// @homepageURL	 https://github.com/SenorKarlos/
 // @match        https://wayfarer.nianticlabs.com/*
 // ==/UserScript==
 
@@ -13,7 +13,8 @@
 function init() {
 	const w = typeof unsafeWindow === 'undefined' ? window : unsafeWindow;
 
-	let nominationController;
+	let tzAdjust = 0;
+    let nominationController;
 	let candidates = [];
 	let nominations;
 
@@ -42,7 +43,7 @@ function init() {
 		nominations = nominationController.nomList;
 		nominations.forEach(function(item) {
 			if (item.status == 'NOMINATED' || item.status == 'VOTING' || item.status == 'REJECTED') {
-                let timestamp = (Date.parse(item.day)/1000)+ 43200;
+                let timestamp = (Date.parse(item.day)/1000)+ tzAdjust;
                 if(item.status == 'REJECTED'){
                     item.status = 3;
                 }else if(item.status == 'NOMINATED'){
@@ -109,10 +110,10 @@ function init() {
 
 	function generateOutput() {
 		let outputSQL = '';
-		let outputSQLA = 'INSERT INTO poi (poi_id, title, description, poiimageurl, lat, lon, status, updated, submitted_by) VALUES (';
+		let outputSQLA = 'INSERT INTO poi (poi_id, name, description, poiimageurl, lat, lon, status, updated, submitted_by) VALUES (';
 		let outputSQLB = ') ON DUPLICATE KEY UPDATE ';
 		candidates.forEach(function(item) {
-			outputSQL += outputSQLA + '"' + item.id + '","' + item.title + '","' + item.description + '","' + item.imageurl + '",' + item.lat + ',' + item.lng + ',' + item.status + ',' + item.timestamp + ',"' + item.nickname + '"' + outputSQLB + 'title="' + item.title + '", description="' + item.description + '", lat=' + item.lat + ', lon=' + item.lng + ', status=' + item.status + ', edited_by="' + item.nickname + '";\n';
+			outputSQL += outputSQLA + '"' + item.id + '","' + item.title + '","' + item.description + '","' + item.imageurl + '",' + item.lat + ',' + item.lng + ',' + item.status + ',' + item.timestamp + ',"' + item.nickname + '"' + outputSQLB + 'name="' + item.title + '", description="' + item.description + '", status=' + item.status + ', edited_by="' + item.nickname + '";\n';
 		})
 		return outputSQL;
 	}
