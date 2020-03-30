@@ -2,9 +2,9 @@
 
 ## Preface for Map Users
 
-I have checked this script while editing and neither it nor the program that enables it is dangerous if used properly. I have been running Tampermonkey for years and have used it on both Ingress Intel (IITC plugin) and now Wayfarer with no issues. To be extra safe follow the optional security tips provided.
+I have checked this script while editing and neither it nor the program that enables it is dangerous if used properly. I have been running Tampermonkey for years and have used it on both Ingress Intel (IITC plugin) and now Wayfarer with no issues. To be extra safe follow the optional security tips provided
 
-It does not even get your player name let alone any personal or account data, and does not send any evidence of its use back to Niantic.
+It does not even get your player name let alone any personal or account data, and runs completely on your side of the conneection to Niantic
 
 ## Installation
 
@@ -12,28 +12,31 @@ It does not even get your player name let alone any personal or account data, an
 
 * First install Tampermonkey Plugin for Chrome Browser. Go to: https://www.tampermonkey.net/
 
-* Click on download. You'll be redirected to Chrome's webstore.
+* Click on download. You'll be redirected to Chrome's webstore
 ![installation](assets/installation_1.png?raw=true)
 
-* Choose 'Add to Chrome'.
+* Choose 'Add to Chrome'
 ![installation](assets/installation_2.png?raw=true)
 
-* Now go to the new extension and open options.
+* Now go to the new extension and open details
 ![installation](assets/installation_3.png?raw=true)
 ![installation](assets/installation_4.png?raw=true)
 
 * OPTIONAL SECURITY TIP: Change the "Site Access" setting to On Click or On Specific Sites, specifying `https://wayfarer.nianticlabs.com`
+
 ![installation](assets/installation_5.png?raw=true)
 
-* To install the script, click on '+'. An editor should now open.
+* To install the script, click on '+'. An editor should now open. Delete all the text in it
 ![installation](assets/installation_6.png?raw=true)
 
 * Open the script file in another browser window at this link: https://github.com/SenorKarlos/wayfarer-PMSF-export/blob/master/wayfarer-PMSF-export.js
+
 ![installation](assets/installation_12.png?raw=true)
-* Copy the entire text in the code viewer, making sure not to get anything extra.
+
+* Copy the entire text in the code viewer, making sure not to get anything extra
 ![installation](assets/installation_9.png?raw=true)
 ![installation](assets/installation_10.png?raw=true)
-* Then paste it into Tampermonkey's editor. In order to display the correct Submitted Date on the map we need to make one small edit if you are west of Universal Time (UTC London Time). Examples provided for North America at Midnight on the submission date. (3600 x hours offset) For UTC and east it should show the correct date, however if you want to stick with Midnight Local Time, simply use a negative number.
+* Then paste it into Tampermonkey's editor. In order to display the correct Submitted Date on the map we need to make one small edit if you are west of Universal Time (UTC London Time). Examples provided for North America at Midnight on the submission date. (3600 x hours offset) For UTC and east it should show the correct date, however if you want to stick with Midnight Local Time, simply use a negative number
 
 Newfoundland Time - `12600`\
 Atlantic Time - `14400`\
@@ -49,15 +52,17 @@ After saving & closing it should look like the following:
 ![installation](assets/installation_8.png?raw=true)
 
 
+
+
 ## Exporter Usage
 
-Go to the Wayfarer homepage and open your nominations page. If enabled, the script will create an overlay and add an export button. It's as easy as 1,2,3!
+* Go to the Wayfarer homepage and open your nominations page. If enabled, the script will create an overlay and add an export button. It's as easy as 1,2,3!
 
 * 1 - Click Export to get the box to appear
 ![usage](assets/usage_1.png?raw=true)
 * 2 - Click Copy Output to get the information we need
 
-* 3 - Open Discord and send a DM to your Mapper (or however your Mapper requests) and paste. If the message is too long (almost always) Discord will automatically send it as a text file as shown.
+* 3 - Open Discord and send a DM to your Mapper (or however your Mapper requests) and paste. The message will likey be too long so Discord will automatically send it as a text file as shown, just click Upload
 ![usage](assets/usage_2.png?raw=true)
 ![usage](assets/usage_3.png?raw=true)
 
