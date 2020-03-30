@@ -4,7 +4,7 @@
 
 I have checked this script while editing and neither it nor the program that enables it is dangerous if used properly. I have been running Tampermonkey for years and have used it on both Ingress Intel (IITC plugin) and now Wayfarer with no issues. To be extra safe follow the optional security tips provided
 
-It does not even get your player name let alone any personal or account data, and runs completely on your side of the conneection to Niantic
+It does not even get your player name let alone any personal or account data, and runs completely on your side of the connection to Niantic
 
 ## Installation
 
@@ -22,7 +22,7 @@ It does not even get your player name let alone any personal or account data, an
 ![installation](assets/installation_3.png?raw=true)
 ![installation](assets/installation_4.png?raw=true)
 
-* OPTIONAL SECURITY TIP: Change the "Site Access" setting to On Click or On Specific Sites, specifying `https://wayfarer.nianticlabs.com`
+* OPTIONAL SECURITY TIP: Change the "Site Access" setting to On Click or On Specific Sites, specifying `https://wayfarer.nianticlabs.com`. I have also set allow in incognito for when I'm signed into both accounts
 
 ![installation](assets/installation_5.png?raw=true)
 
