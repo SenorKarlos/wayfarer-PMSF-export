@@ -13,7 +13,7 @@
 function init() {
 	const w = typeof unsafeWindow === 'undefined' ? window : unsafeWindow;
 
-	let tzAdjust = 0;
+	let tzAdjust = 18000;
     let nominationController;
 	let candidates = [];
 	let nominations;
@@ -43,7 +43,8 @@ function init() {
 		nominations = nominationController.nomList;
 		nominations.forEach(function(item) {
 			if (item.status == 'NOMINATED' || item.status == 'VOTING' || item.status == 'REJECTED') {
-                let timestamp = (Date.parse(item.day)/1000)+ tzAdjust;
+                let submittime = (Date.parse(item.day)/1000)+ tzAdjust;
+                let timestamp = Math.floor(Date.now() /1000);
                 if(item.status == 'REJECTED'){
                     item.status = 3;
                 }else if(item.status == 'NOMINATED'){
@@ -59,8 +60,9 @@ function init() {
 					'lat': item.lat,
 					'lng': item.lng,
                     'status': item.status,
-					'timestamp': timestamp,
-					'nickname': 'username#1234'
+					'updated': timestamp,
+                    'nickname': 'username#1234',
+                    'submitted': submittime
 				};
 				candidates.push(candidate);
 			}
@@ -113,7 +115,7 @@ function init() {
 		let outputSQLA = 'INSERT INTO poi (poi_id, name, description, poiimageurl, lat, lon, status, updated, submitted_by) VALUES (';
 		let outputSQLB = ') ON DUPLICATE KEY UPDATE ';
 		candidates.forEach(function(item) {
-			outputSQL += outputSQLA + '"' + item.id + '","' + item.title + '","' + item.description + '","' + item.imageurl + '",' + item.lat + ',' + item.lng + ',' + item.status + ',' + item.timestamp + ',"' + item.nickname + '"' + outputSQLB + 'name="' + item.title + '", description="' + item.description + '", status=' + item.status + ', edited_by="' + item.nickname + '";\n';
+			outputSQL += outputSQLA + '"' + item.id + '","' + item.title + '","' + item.description + '","' + item.imageurl + '",' + item.lat + ',' + item.lng + ',' + item.status + ',' + item.submitted + ',"' + item.nickname + '"' + outputSQLB + 'name="' + item.title + '", description="' + item.description + '", status=' + item.status + ', updated= ' + item.updated + ', edited_by="' + item.nickname + '";\n';
 		})
 		return outputSQL;
 	}
